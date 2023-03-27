@@ -1,0 +1,22 @@
+package gaborets.iwanof.labfirst.taskfirst;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+public final class Add {
+
+    public static ZonedDateTime getCurrentDateTimeMinusDays(long minusDays) {
+        return ZonedDateTime.now(ZoneId.of("Europe/Kiev")).minusDays(minusDays);
+    }
+
+    public static ResourceBundle getLocalizationBundle(Locale locale) {//подбирает нужный текст.файл для наш локали
+        return ResourceBundle.getBundle("localization", locale);
+    }
+
+//    public static boolean isRunning(Scanner scanner) {
+//        System.out.println("Repeat?(1 - yes, 2 - no)");
+//        return scanner.next().equals(1);
+//    }
+}
