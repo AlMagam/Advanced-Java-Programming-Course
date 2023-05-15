@@ -1,0 +1,24 @@
+<gaborets.lab3__fx.taskone.SubwayStream>
+  <name>Hauptbahnhof</name>
+  <openingYear>1847</openingYear>
+  <hours>
+    <passengersNumber>973</passengersNumber>
+    <comment>was zu viel passangers</comment>
+  </hours>
+  <hours>
+    <passengersNumber>132</passengersNumber>
+    <comment>wenig passangers</comment>
+  </hours>
+  <hours>
+    <passengersNumber>700</passengersNumber>
+    <comment>midle pas</comment>
+  </hours>
+  <hours>
+    <passengersNumber>990</passengersNumber>
+    <comment>was zu viel pas</comment>
+  </hours>
+  <hours>
+    <passengersNumber>1490</passengersNumber>
+    <comment>das ist zu viel ich denke</comment>
+  </hours>
+</gaborets.lab3__fx.taskone.SubwayStream>
