@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gaborets.lab3_fx.taskone.SubwayController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="File">
+                <MenuItem mnemonicParsing="false" onAction="#doNew" text="New" />
+                <MenuItem mnemonicParsing="false" onAction="#doOpen" text="Open" />
+                <MenuItem mnemonicParsing="false" onAction="#doSave" text="Save" />
+                <MenuItem mnemonicParsing="false" onAction="#doExit" text="Exit" />
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <MenuItem mnemonicParsing="false" onAction="#doAdd" text="add row" />
+                <MenuItem mnemonicParsing="false" onAction="#doRemove" text="delete last row" />
+            </Menu>
+            <Menu mnemonicParsing="false" text="Work">
+                <MenuItem mnemonicParsing="false" onAction="#sortByPassengerNumberDesc" text="sort by decreasing passangers count" />
+                <MenuItem mnemonicParsing="false" onAction="#sortByCommentLengthDesc" text="sort by decreasing comment length" />
+                <MenuItem mnemonicParsing="false" onAction="#sortByCommentAlphabetically" text="sort by comment in alphabetical order" />
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <MenuItem mnemonicParsing="false" onAction="#doAbout" text="About" />
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <left>
+        <AnchorPane prefHeight="474.0" prefWidth="521.0" BorderPane.alignment="CENTER">
+            <Label text="Subway station" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="14.0">
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+            <TextField fx:id="textFieldMetroStation" onKeyReleased="#nameChanged" prefHeight="26.0" prefWidth="287.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="192.0" AnchorPane.topAnchor="35.0" />
+            <Label text="Open Year" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="69.0">
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+            <TextField fx:id="textFieldOpeningYear" onKeyReleased="#openingYearChanged" prefHeight="26.0" prefWidth="119.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="360.0" AnchorPane.topAnchor="90.0" />
+
+            <Label layoutX="11.0" layoutY="147.0" text="Find time by comment:" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="147.0">
+            <font>
+               <Font name="System Bold Italic" size="14.0" />
+            </font></Label>
+            <TextField fx:id="textFieldHourByComment" prefHeight="26.0" prefWidth="288.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="191.0" AnchorPane.topAnchor="175.0" />
+            <Button layoutX="169.0" layoutY="210.0" mnemonicParsing="false" onAction="#doFindHoursByComment" prefHeight="26.0" prefWidth="162.0" text="Find time" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="210.0" />
+            <TextArea fx:id="textAreaResults" layoutY="244.0" prefHeight="218.0" prefWidth="493.0" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="244.0" />
+        </AnchorPane>
+    </left>
+
+    <center>
+        <TableView fx:id="tableViewHours" editable="true" prefHeight="474.0" prefWidth="109.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="tableColumnPassengerCount" prefWidth="81.59997713565826" text="Passengers count" />
+                <TableColumn fx:id="tableColumnComment" prefWidth="100.79998016357422" text="Commentary" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
